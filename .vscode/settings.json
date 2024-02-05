@@ -1,0 +1,13 @@
+{
+    "clangd.arguments": [
+        "--query-driver=C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe",
+        "--compile-commands-dir=.vscode",
+        "--clang-tidy",
+        "--background-index",
+        "--suggest-missing-includes"
+    ],
+    "clangd.onConfigChanged": "restart",
+    "cortex-debug.gdbPath": "C:\\msys64\\mingw64\\bin\\gdb-multiarch.exe",
+    "cortex-debug.openocdPath": "C:\\msys64\\mingw64\\bin\\openocd.exe",
+
+}

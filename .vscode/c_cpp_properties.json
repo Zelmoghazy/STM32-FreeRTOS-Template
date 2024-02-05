@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "STM32",
+            "compilerPath": "C:\\msys64\\mingw64\\bin\\arm-none-eabi-gcc.exe",
+            "compileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ]
+        }
+    ],
+    "version": 4
+}
