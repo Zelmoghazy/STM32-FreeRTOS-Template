@@ -186,6 +186,9 @@ clean:
 
 debug:
 	uv4 -d .\Keil\STM32.uvprojx
+
+flash:
+	st-flash --reset write $(BUILD_DIR)/$(TARGET).bin 0x08000000
   
 #######################################
 # dependencies
