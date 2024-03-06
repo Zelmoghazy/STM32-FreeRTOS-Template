@@ -57,15 +57,15 @@
 #define configUSE_IDLE_HOOK                      0
 #define configUSE_TICK_HOOK                      0
 #define configCPU_CLOCK_HZ                       ( SystemCoreClock )
-#define configTICK_RATE_HZ                       ((TickType_t)1000)
-#define configMAX_PRIORITIES                     ( 7 )
+#define configTICK_RATE_HZ                       ((TickType_t)1000) // sets the frequency of the tick interrupt,also the length of each time slice.
+#define configMAX_PRIORITIES                     ( 7 )              // sets the number of available priorities
 #define configMINIMAL_STACK_SIZE                 ((uint16_t)128)
 #define configTOTAL_HEAP_SIZE                    ((size_t)3072)
 #define configMAX_TASK_NAME_LEN                  ( 16 )
 #define configUSE_16_BIT_TICKS                   0
 #define configUSE_MUTEXES                        1
 #define configQUEUE_REGISTRY_SIZE                8
-#define configUSE_PORT_OPTIMISED_TASK_SELECTION  1
+#define configUSE_PORT_OPTIMISED_TASK_SELECTION  1       // Architecture optimized implementation of the algorithm used to select the Running state task 
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
