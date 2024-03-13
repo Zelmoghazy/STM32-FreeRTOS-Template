@@ -51,10 +51,10 @@
   #include <stdint.h>
   extern uint32_t SystemCoreClock;
 #endif
-#define configUSE_PREEMPTION                     1
+#define configUSE_PREEMPTION                     1  // 'preempt' the Running state task if a task that has a higher priority enters the Ready state. 
 #define configSUPPORT_STATIC_ALLOCATION          1
 #define configSUPPORT_DYNAMIC_ALLOCATION         1
-#define configUSE_IDLE_HOOK                      0
+#define configUSE_IDLE_HOOK                      0  // add application specific functionality directly into the idle task through vApplicationIdleHook
 #define configUSE_TICK_HOOK                      0
 #define configCPU_CLOCK_HZ                       ( SystemCoreClock )
 #define configTICK_RATE_HZ                       ((TickType_t)1000) // sets the frequency of the tick interrupt,also the length of each time slice.
@@ -67,15 +67,17 @@
 #define configQUEUE_REGISTRY_SIZE                8
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION  1       // Architecture optimized implementation of the algorithm used to select the Running state task 
 
+#define configIDLE_SHOULD_YIELD                  1    // Idle task yields on each iteration of its loop if there are other Idle priority tasks in the Ready state.
+
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
 #define configMAX_CO_ROUTINE_PRIORITIES          ( 2 )
 
 /* Set the following definitions to 1 to include the API function, or zero
 to exclude the API function. */
-#define INCLUDE_vTaskPrioritySet            1
-#define INCLUDE_uxTaskPriorityGet           1
-#define INCLUDE_vTaskDelete                 1
+#define INCLUDE_vTaskPrioritySet            1    // change the priority of a task after the scheduler has been started. 
+#define INCLUDE_uxTaskPriorityGet           1    // returns the priority of a task.
+#define INCLUDE_vTaskDelete                 1    // to enable the vTaskDelete() API function
 #define INCLUDE_vTaskCleanUpResources       0
 #define INCLUDE_vTaskSuspend                1
 #define INCLUDE_vTaskDelayUntil             0

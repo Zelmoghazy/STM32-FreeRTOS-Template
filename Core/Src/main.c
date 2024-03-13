@@ -11,6 +11,9 @@ static void MX_GPIO_Init(void);
 void StartDefaultTask(void const * argument);
 void StartTask02(void const * argument);
 
+volatile unsigned long ulIdleCycleCount = 0UL;
+
+
 int main(void)
 {
     HAL_Init();
@@ -56,6 +59,16 @@ void StartTask02(void const * argument)
         HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
         vTaskDelay(ticks ? ticks : 1);  
     }
+}
+
+/*
+* Idle hook functions MUST be called vApplicationIdleHook(), take no
+* parameters, and return void.
+*/
+void vApplicationIdleHook( void )
+{
+    /* This hook function does nothing but increment a counter. */
+    ulIdleCycleCount++;
 }
 
 void SystemClock_Config(void)
