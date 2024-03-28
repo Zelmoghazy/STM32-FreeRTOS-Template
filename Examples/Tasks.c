@@ -413,5 +413,5 @@ int main(void) {
     }
 }
 
-#endif /* DELETE_TASK /*
+#endif /* DELETE_TASK */
 
