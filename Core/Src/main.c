@@ -43,7 +43,7 @@ int main(void)
 
 void StartDefaultTask(void const * argument)
 {
-    TickType_t ticks = 500 / portTICK_PERIOD_MS;
+    TickType_t ticks = 1000 / portTICK_PERIOD_MS;
     for(;;)
     {
         vTaskDelay(ticks ? ticks : 1);  
@@ -53,7 +53,7 @@ void StartDefaultTask(void const * argument)
 
 void StartTask02(void const * argument)
 {
-    TickType_t ticks = 500 / portTICK_PERIOD_MS;
+    TickType_t ticks = 1000 / portTICK_PERIOD_MS;
     for(;;)
     {
         HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
