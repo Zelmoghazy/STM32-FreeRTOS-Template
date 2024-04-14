@@ -67,14 +67,19 @@
 #define configQUEUE_REGISTRY_SIZE                8
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION  1       // Architecture optimized implementation of the algorithm used to select the Running state task 
 
+#define configUSE_TIMERS               1                           // Include software timer functionality
+#define configTIMER_TASK_PRIORITY      (configMAX_PRIORITIES - 1)  // priority of the timer service task
+#define configTIMER_TASK_STACK_DEPTH   configMINIMAL_STACK_SIZE    //stack (in words) allocated to the timer service task.
+#define configTIMER_QUEUE_LENGTH        10                         // Maximum number of unprocessed commands that the timer command queue can hold
+
+
 #define configIDLE_SHOULD_YIELD                  1    // Idle task yields on each iteration of its loop if there are other Idle priority tasks in the Ready state.
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                    0
 #define configMAX_CO_ROUTINE_PRIORITIES          ( 2 )
 
-/* Set the following definitions to 1 to include the API function, or zero
-to exclude the API function. */
+/* Set the following definitions to 1 to include the API function, or zero to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet            1    // change the priority of a task after the scheduler has been started. 
 #define INCLUDE_uxTaskPriorityGet           1    // returns the priority of a task.
 #define INCLUDE_vTaskDelete                 1    // to enable the vTaskDelete() API function
