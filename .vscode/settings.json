@@ -10,7 +10,8 @@
     "cortex-debug.gdbPath": "C:\\msys64\\mingw64\\bin\\gdb-multiarch.exe",
     "cortex-debug.openocdPath": "C:\\msys64\\mingw64\\bin\\openocd.exe",
     "files.associations": {
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "freertos.h": "c"
     },
 
 }

@@ -1,3 +1,9 @@
+#include "FreeRTOS.h"
+#include "task.h"
+#include "timers.h"
+#include "queue.h"
+#include "semphr.h"
+#include "event_groups.h"
 
 #ifdef TIMER_1
 /* The periods assigned to the one-shot and auto-reload timers are 3.333
@@ -76,7 +82,7 @@ static void prvAutoReloadTimerCallback( TimerHandle_t xTimer )
 #endif /* TIMER_1 */
 
 
-
+#define SINGLE_CALLBACK
 
 #ifdef SINGLE_CALLBACK
 
@@ -211,7 +217,7 @@ static void prvCheckTimerCallbackFunction(TimerHandle_t xTimer)
 }
 #endif /* CHANGE_PERIOD */
 
-#define RESET
+
 #ifdef RESET
 /*
     This example simulates the behavior of the backlight on a cell phone. The backlight:
