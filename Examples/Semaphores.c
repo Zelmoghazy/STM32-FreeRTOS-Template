@@ -210,7 +210,8 @@ int main(void) {
 
 
 
-#ifdef RECOMMENDED
+#if RECOMMENDED
+
 static void vUARTReceiveHandlerTask(void *pvParameters) 
 {
     /* xMaxExpectedBlockTime holds the maximum time expected between two interrupts. */
@@ -254,6 +255,7 @@ static void vUARTReceiveHandlerTask(void *pvParameters)
         }
     }
 }
+
 #endif /* RECOMMENDED */
 
 
